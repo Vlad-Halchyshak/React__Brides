@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7366947fb58f10b93de6d4bdf5a4a68e",
+    "revision": "3b1446efd40891794fed5f90c240d9a5",
     "url": "/React__Brides/index.html"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/React__Brides/static/css/3.09cb5700.chunk.css"
   },
   {
-    "revision": "b635972afab2002e827d",
+    "revision": "81dcdc7279c9122aab2b",
     "url": "/React__Brides/static/css/main.f308ae42.chunk.css"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/React__Brides/static/js/3.7928b35a.chunk.js"
   },
   {
-    "revision": "b635972afab2002e827d",
-    "url": "/React__Brides/static/js/main.23316e26.chunk.js"
+    "revision": "81dcdc7279c9122aab2b",
+    "url": "/React__Brides/static/js/main.d3fe211f.chunk.js"
   },
   {
     "revision": "0511b98dd80c8c9b49c0",

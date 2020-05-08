@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/React__Brides/static/css/main.f308ae42.chunk.css",
-    "main.js": "/React__Brides/static/js/main.23316e26.chunk.js",
-    "main.js.map": "/React__Brides/static/js/main.23316e26.chunk.js.map",
+    "main.js": "/React__Brides/static/js/main.d3fe211f.chunk.js",
+    "main.js.map": "/React__Brides/static/js/main.d3fe211f.chunk.js.map",
     "runtime-main.js": "/React__Brides/static/js/runtime-main.4feb57a9.js",
     "runtime-main.js.map": "/React__Brides/static/js/runtime-main.4feb57a9.js.map",
     "static/css/2.ae8e9f95.chunk.css": "/React__Brides/static/css/2.ae8e9f95.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.7928b35a.chunk.js": "/React__Brides/static/js/3.7928b35a.chunk.js",
     "static/js/3.7928b35a.chunk.js.map": "/React__Brides/static/js/3.7928b35a.chunk.js.map",
     "index.html": "/React__Brides/index.html",
-    "precache-manifest.0cbb4ed7eab126c5b23187c1887c0610.js": "/React__Brides/precache-manifest.0cbb4ed7eab126c5b23187c1887c0610.js",
+    "precache-manifest.50abb36c3d641705bcb540df20fb9f50.js": "/React__Brides/precache-manifest.50abb36c3d641705bcb540df20fb9f50.js",
     "service-worker.js": "/React__Brides/service-worker.js",
     "static/css/2.ae8e9f95.chunk.css.map": "/React__Brides/static/css/2.ae8e9f95.chunk.css.map",
     "static/css/3.09cb5700.chunk.css.map": "/React__Brides/static/css/3.09cb5700.chunk.css.map",
@@ -29,6 +29,6 @@
     "static/css/2.ae8e9f95.chunk.css",
     "static/js/2.504b9338.chunk.js",
     "static/css/main.f308ae42.chunk.css",
-    "static/js/main.23316e26.chunk.js"
+    "static/js/main.d3fe211f.chunk.js"
   ]
 }
