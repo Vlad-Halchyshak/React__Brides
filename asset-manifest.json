@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/findmenowdude/React__Brides.git/static/css/main.f308ae42.chunk.css",
+    "main.js": "/findmenowdude/React__Brides.git/static/js/main.d3835c2a.chunk.js",
+    "main.js.map": "/findmenowdude/React__Brides.git/static/js/main.d3835c2a.chunk.js.map",
+    "runtime-main.js": "/findmenowdude/React__Brides.git/static/js/runtime-main.bf0d7c61.js",
+    "runtime-main.js.map": "/findmenowdude/React__Brides.git/static/js/runtime-main.bf0d7c61.js.map",
+    "static/css/2.1a24570e.chunk.css": "/findmenowdude/React__Brides.git/static/css/2.1a24570e.chunk.css",
+    "static/js/2.f8d3e6c8.chunk.js": "/findmenowdude/React__Brides.git/static/js/2.f8d3e6c8.chunk.js",
+    "static/js/2.f8d3e6c8.chunk.js.map": "/findmenowdude/React__Brides.git/static/js/2.f8d3e6c8.chunk.js.map",
+    "static/css/3.fbe55b78.chunk.css": "/findmenowdude/React__Brides.git/static/css/3.fbe55b78.chunk.css",
+    "static/js/3.84e84135.chunk.js": "/findmenowdude/React__Brides.git/static/js/3.84e84135.chunk.js",
+    "static/js/3.84e84135.chunk.js.map": "/findmenowdude/React__Brides.git/static/js/3.84e84135.chunk.js.map",
+    "index.html": "/findmenowdude/React__Brides.git/index.html",
+    "precache-manifest.ccc80581093b76c7d30cdd199511e9eb.js": "/findmenowdude/React__Brides.git/precache-manifest.ccc80581093b76c7d30cdd199511e9eb.js",
+    "service-worker.js": "/findmenowdude/React__Brides.git/service-worker.js",
+    "static/css/2.1a24570e.chunk.css.map": "/findmenowdude/React__Brides.git/static/css/2.1a24570e.chunk.css.map",
+    "static/css/3.fbe55b78.chunk.css.map": "/findmenowdude/React__Brides.git/static/css/3.fbe55b78.chunk.css.map",
+    "static/css/main.f308ae42.chunk.css.map": "/findmenowdude/React__Brides.git/static/css/main.f308ae42.chunk.css.map",
+    "static/js/2.f8d3e6c8.chunk.js.LICENSE.txt": "/findmenowdude/React__Brides.git/static/js/2.f8d3e6c8.chunk.js.LICENSE.txt",
+    "static/media/chats.scss": "/findmenowdude/React__Brides.git/static/media/chat_girl.dd23b76b.jpg",
+    "static/media/girl.jpg": "/findmenowdude/React__Brides.git/static/media/girl.be45ecdc.jpg",
+    "static/media/slick-theme.css": "/findmenowdude/React__Brides.git/static/media/slick.f97e3bbf.svg",
+    "static/media/vito.jpg": "/findmenowdude/React__Brides.git/static/media/vito.f29926d2.jpg",
+    "static/media/vito1.jpg": "/findmenowdude/React__Brides.git/static/media/vito1.4d63768a.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bf0d7c61.js",
+    "static/css/2.1a24570e.chunk.css",
+    "static/js/2.f8d3e6c8.chunk.js",
+    "static/css/main.f308ae42.chunk.css",
+    "static/js/main.d3835c2a.chunk.js"
+  ]
+}
