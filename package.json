@@ -1,0 +1,52 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://github.com/findmenowdude/MyReact.git",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
+    "classnames": "^2.2.6",
+    "node-sass": "^4.13.1",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.0",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "react-slick": "^0.25.2",
+    "redux": "^4.0.5",
+    "redux-form": "^8.3.5",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "slick-carousel": "^1.8.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/react": "^10.0.4",
+    "gh-pages": "^2.2.0"
+  }
+}

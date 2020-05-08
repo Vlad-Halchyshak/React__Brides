@@ -1,0 +1,15 @@
+.Slider {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 80rem;
+  justify-content: center;
+  text-align: center;
+
+
+}
+
+.img {
+  padding-top: 20px;
+}
+
+

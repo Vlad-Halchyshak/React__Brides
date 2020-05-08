@@ -1,0 +1,81 @@
+.login_container {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  grid-auto-flow: column;
+  grid-column-gap: 10px;
+ }
+
+ .login_box {
+   display: flex;
+   margin-left: 120px;
+   margin-top: 20px;
+   
+   justify-content: center;
+   background-color: #EBEBEB;
+ }
+ .login_box h1 {
+   color: #16B4DC;
+ }
+
+ .Remember_proceed {
+   padding-top: 10px;
+   margin-bottom: 15px;
+   
+    
+ }
+ .Remember_proceed button {
+   margin-left: 25px;
+   background-color: lightgrey
+ }
+ .Remember_proceed button:hover {
+    background-color:  lavender;
+ }
+
+ .Login_pass {
+   padding-top: 11px;
+   margin-bottom: 10px;
+ }
+.girl_block {
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
+  margin-top: 15px;
+  
+}
+
+ .girl_img img {
+   display: flex;
+   height: 300px;
+   margin-right: 15px;
+ }
+
+ .Welcome h1 {
+   display: flex;
+   color: #16B4DC; 
+   display: flex;
+   margin-left: 200px;
+   
+ }
+ 
+ .online_girl {
+   position: relative;
+   bottom:  22px;
+   background-color:rgba(66, 133, 17, 1);
+   color: white;
+   
+  }
+
+  .girl_name {
+    position: relative;
+    bottom: 15px;
+font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .FormError {
+    color: red;
+    }
+
+    .Captcha_field {
+      padding-top: 5px;
+    }
+    

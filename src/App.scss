@@ -1,0 +1,400 @@
+@import "~bootstrap/scss/bootstrap";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: #3c3c3c;
+  color: #fff;
+  padding-right: 25rem;
+}
+
+.header__item_Dashboard {
+  padding-left: 1rem;
+}
+
+.header__section {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.header__section3 {
+  display: flex;
+  padding-right: 20px;
+}
+
+.header__item:hover {
+  background-color: black;
+  border-radius: 2rem;
+}
+
+.header__item {
+  padding: 0 20px;
+  color: white;
+}
+
+.header__item_Dashboard h3 {
+  display: flex;
+
+  padding-top: 12px;
+  color: #b3b3b3;
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+}
+
+.header__item a {
+  color: white;
+  text-decoration: none;
+}
+
+.header__item a.active {
+  color: silver;
+
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+
+.nav {
+  display: flex;
+  justify-content: center;
+  border-bottom: 5px solid #16b4dc;
+  background-color: snow;
+
+}
+
+.nav__section {
+  display: flex;
+  padding: 18px;
+
+}
+
+.nav__item {
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+
+.nav__item:hover {
+  background-color: #16b4dc;
+  border-radius: 2rem;
+}
+
+.content__section {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 3fr 3fr;
+  column-gap: 10px;
+
+}
+
+.content .choose_photo {
+  position: relative;
+  top: 510px;
+  left: 211px;
+}
+
+.choose_photo input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.content .choose_photo label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: snow;
+  color: grey
+}
+
+.content .choose_photo label:hover {
+  color: lightsalmon;
+
+}
+
+.content__section img {
+  grid-column: 2/3;
+  max-width: 350px;
+  column-gap: 10px;
+
+  height: 29.5rem;
+  width: 19rem;
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+
+}
+
+.parameters .table-wrap .table {
+  width: 14rem;
+
+  font-size: small;
+  font-family: "open-sans"sans-serif;
+}
+
+.name-profile p {
+  font-size: 14px;
+}
+
+.action_btns {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-family: OpenSansRegular;
+  color: white;
+}
+
+.edit_button {
+  position: relative;
+  margin-top: 15px;
+  color: lightblue;
+  bottom: 110px;
+  right: 40px;
+}
+
+.edit_button:hover {
+  color: lightslategray;
+}
+
+.save_button {
+  position: relative;
+  margin-top: 15px;
+  color: lightblue;
+  bottom: 285px;
+  right: 40px;
+}
+
+.save_button:hover {
+  color: lightslategray;
+}
+
+.action_btns a {
+  text-decoration: none;
+  color: #bebebe;
+}
+
+.btn_inv {
+  background: transparent url("./assets/button-profile.png") no-repeat;
+  background-position: 30px 0px;
+  padding-top: 30px;
+}
+
+.btn_start_chat {
+  background: transparent url("./assets/button-profile.png") no-repeat;
+  background-position: -80px 0px;
+  padding-top: 30px;
+}
+
+.btn_write_letter {
+  background: transparent url("./assets/button-profile.png") no-repeat;
+  background-position: -182px 0px;
+  padding-top: 30px;
+}
+
+.btn_add_to_fav {
+  background: transparent url("./assets/button-profile.png") no-repeat;
+  background-position: -289px 0px;
+  padding-top: 30px;
+}
+
+.btn_like_her {
+  background: transparent url("./assets/button-profile.png") no-repeat;
+  background-position: -400px 0px;
+  padding-top: 30px;
+}
+
+.btn_inv:hover,
+.btn_start_chat:hover,
+.btn_write_letter:hover,
+.btn_add_to_fav:hover,
+.btn_like_her:hover {
+  transform: Scale(0.8, 0.8);
+  transition: all 0.3s ease-in-out
+}
+
+.table-params {
+  color: #bebebe;
+  margin-top: 20px;
+}
+
+
+.table-params a {
+  padding-left: 3rem;
+  color: #16B4DC;
+}
+
+.Info_details {
+  color: #bebebe;
+  margin-top: 10px;
+}
+
+.down_buttons {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  text-decoration: none;
+}
+
+.down_buttons a {
+  text-decoration: none;
+}
+
+.btn_chat {
+  background: #16B4DC url("./assets/chat.png") no-repeat 5px;
+  padding: 5px 20px 5px 35px;
+  color: white;
+  margin-right: 25px;
+  border: 1px solid black;
+}
+
+.btn_camera {
+  background: #16B4DC url("./assets/camera.png") no-repeat 5px;
+  padding: 5px 20px 5px 35px;
+  color: white;
+  border: 1px solid black;
+  margin-right: 25px
+}
+
+.btn_letter {
+  background: #f9f9f9 url("./assets/letter.png") no-repeat 5px;
+  padding: 5px 20px 5px 35px;
+  color: #646464;
+  border: 1px solid black
+}
+
+.btn_chat:hover,
+.btn_camera:hover {
+  background-color: #468C18;
+}
+
+.btn_letter:hover {
+  background-color: lightgrey;
+}
+
+.choose_photo {
+  position: relative;
+  top: 20px;
+
+}
+
+.footer_container {
+  display: grid;
+  background-color: #f1f1f1;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 150px;
+  padding-top: 60px;
+  border-top: 5px solid #16b4dc;
+}
+
+.copyright {
+  font-size: 12px;
+  font-family: Open-sans, sans-serif;
+  padding-left: 3rem;
+}
+
+.copyright p {
+  padding-top: 140px;
+}
+
+.about_text li a,
+.agency_text li a,
+.services_text li a {
+  color: #979797;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.about_text li,
+.agency_text li,
+.services_text li {
+  list-style-type: none;
+  padding-top: 6px;
+}
+
+.about h3,
+.agency h3,
+.Services h3 {
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+ul.agency_text li {
+  background: url("./assets/agency.png")no-repeat
+}
+
+ul.agency_text li.ag_mission {
+  background-position: 0 3px;
+}
+
+ul.agency_text li.ag_scams {
+  background-position: 0 -37px;
+}
+
+ul.agency_text li.ag_news {
+  background-position: 0 -74px;
+}
+
+ul.agency_text li.ag_testimonials {
+  background-position: 0 -112px
+}
+
+ul.agency_text li.ag_forgirs {
+  background-position: 0 -150px
+}
+
+ul.services_text li {
+  background: url("./assets/services.png")no-repeat
+}
+
+ul.services_text li.serv_our {
+  background-position: 0 1px;
+}
+
+ul.services_text li.serv_com {
+  background-position: 0 -36px;
+}
+
+ul.services_text li.serv_gift {
+  background-position: 0 -71px;
+}
+
+ul.services_text li.serv_spec {
+  background-position: 0 -110px
+}
+
+ul.services_text li.serv_week {
+  background-position: 0 -148px
+}
+
+ul.services_text li.serv_trip {
+  background-position: 0 -186px
+}
+
+ul.agency_text li,
+ul.services_text li {
+  padding: 5px 45px;
+  height: 37px;
+  margin-bottom: 0px;
+}
+
+ul.agency_text li:first-child,
+ul.services_text li:first-child {
+  padding: 0;
+  background: none;
+}
+
+.Profile_status {
+  display: flex;
+  width: 300px;
+  cursor: pointer;
+  background: url("./assets/edit.jpg")no-repeat;
+  background-color: snow;
+  padding: 0px 30px;
+}

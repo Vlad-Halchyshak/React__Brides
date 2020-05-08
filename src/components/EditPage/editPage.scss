@@ -1,0 +1,111 @@
+.edit_page {
+  display: grid;
+  grid-template-columns: 3fr 10fr;
+  column-gap: 10px;
+  margin-top: 30px;
+  margin-left: 200px;
+}
+
+.progress_bar {
+  width: 600px;
+  text-align: center;
+
+}
+
+.menu_drop {
+
+
+  width: 280px;
+}
+
+.menu_account li:first-child {
+  color: #000000;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.menu_drop li {
+
+  color: #16B4DC;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style-type: none;
+  padding: 5px;
+}
+
+.menu_drop li a {
+  text-decoration: none;
+  color: #16B4DC;
+
+}
+
+.menu_drop li a:hover {
+  color: lightsteelblue
+}
+
+.badge {
+  float: right;
+}
+
+.Correspondence {
+  display: flex;
+  justify-content: space-around;
+
+  background: url("../../assets//menu-account.png")no-repeat;
+  background-position: 0px 11px;
+
+}
+
+.Ladies {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 110px;
+  background: url("../../assets//menu-account.png")no-repeat;
+  background-position: 0px -578px;
+}
+
+.Menu_Services {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 80px;
+  background: url("../../assets//service-ico.png")no-repeat;
+  background-position: 0px;
+}
+
+.Finances {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 80px;
+  background: url("../../assets//menu-account.png")no-repeat;
+  background-position: 0px -444px;
+}
+
+.My_Profile {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 77px;
+  background: url("../../assets//menu-account.png")no-repeat;
+  background-position: 0px -578px;
+}
+
+.ladies_info {
+
+  margin-top: 50px;
+  border: 2px dashed lightblue;
+  max-width: 600px;
+  text-align: center;
+  background-color: #F6F9FA;
+}
+
+.ladies_info .View_profile a {
+  text-decoration: none;
+  color: #bebebe;
+
+
+}
+
+.ladies_info .View_profile:hover {
+  transform: Scale(0.8, 0.8);
+  transition: all 0.4s ease-in-out
+}
