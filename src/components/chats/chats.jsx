@@ -1,6 +1,6 @@
 import React from 'react';
 import chat_girl from "../../images/chat_girl.jpg"
-import {chats} from './chats.scss'
+import { chats } from './chats.scss'
 import { NavLink, Redirect } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 
@@ -68,7 +68,7 @@ const Chats = (props) => {
     props.SendMessage(values.MyTextMessage)
   }
 
- 
+
   return (
     <div className="Chat">
       <div className="Chat-Container">

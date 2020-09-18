@@ -4,10 +4,11 @@ import { NavLink } from 'react-router-dom'
 
 const Header = (props) => {
   return <header className="header">
+    <NavLink to='/profile'>
     <div className="header__item_Dashboard">
-      <span><h6>Brides</h6></span>
+      <span><h5>Brides</h5></span>
       <span><img src={heart} />
-        <i>Dating</i></span></div>
+          <i>Dating</i></span></div></NavLink>
     <div className="header__section">
       <div className="header__item"><NavLink to='/friends'>Friends</NavLink></div>
       <div className="header__item"><NavLink to='/chats'>Chats</NavLink></div>

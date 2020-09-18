@@ -2,8 +2,15 @@ import React from 'react'
 import {ProgressBar} from 'react-bootstrap'
 import {editPage} from './editPage.scss'
 import { NavLink } from 'react-router-dom'
-const EditPage = () => {
+
+
+
+
+const EditPage = (props) => {
+  
+  
   return <div className="edit_page">
+    
     <MenuAccount/>
     <ProgressBarInfo/>
   </div> 
@@ -26,7 +33,9 @@ const ProgressBarInfo = () => {
 }
 
 const MenuAccount = () => {
+  
   return <div className="menu_drop">
+    
     <ul className="menu_account">
       <li className="Correspondence">Correspondence</li>
       <li><a href="#0">Ladies<span className="badge"><b>5</b>/24</span></a></li>
@@ -69,5 +78,6 @@ const MenuAccount = () => {
       </ul>
     </div>
 }
+
 
 export default EditPage

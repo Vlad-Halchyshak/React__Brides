@@ -1,10 +1,25 @@
 import React from 'react'
-import styles from './users.scss'
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom' 
 import Paginator from '../Paginator/paginator'
 import girl from '../../assets/girl.jpg'
+import { UsersType } from '../../types/types'
 
-let Users = ({ currentPage, totalUsersCount, onPageChange, PageSize, ...props }) => {
+
+type PropTypes = {
+  totalUsersCount: number
+  PageSize: number
+  currentPage: number
+  onPageChange: (pageNumber: number) => void
+  users: Array<UsersType>
+  toggleFollowing: Array<number>
+  unfollowThunk: (userId: number) => void
+  followThunk: (userId: number) => void
+  
+}
+
+
+
+let Users: React.FC<PropTypes> = ({ currentPage, totalUsersCount, onPageChange, PageSize,  ...props }) => {
 
   return (
 

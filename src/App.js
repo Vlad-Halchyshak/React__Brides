@@ -10,12 +10,13 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import {initialize} from './redux/app_Reducer'
 import Loading from './components/Loading/loading';
-import {BrowserRouter} from 'react-router-dom'
+import {HashRouter} from 'react-router-dom'
 import store from './redux/redux-store'
 import {Provider} from 'react-redux'
 import { LazySuspense } from './components/Hoc/LazySuspence.js';
 import ProfileContainer from './components/Profile/profileContainer'
-import EditPage from './components/EditPage/EditPage';
+import EditPageContainer from './components/EditPage/EditPageContainer';
+import s from "./components/Users/users.scss";
 
 
 const ChatContainer = React.lazy(() => import('./components/chats/chatsContainer'));
@@ -35,14 +36,14 @@ class App extends React.Component {
     <Nav/>
     <Switch>
     <Route exact path = '/' render = { () => <Redirect to={"/profile"}/>}/>
-    <Route path = '/friends' render = { () => <UsersContainer/>}/>
+    <Route path='/friends' render={() => <UsersContainer />}/>
     <Route path = '/profile/:userId?' render={ () => <ProfileContainer/>}/>
     <Route path = '/login' render={ () =>  <LoginPage/>}/>
-    <Route path = '/MyAccount' render={ () =>  <EditPage/>}/>
+    <Route path = '/MyAccount' render={ () =>  <EditPageContainer/>}/>
     <Route path='/chats' render = {LazySuspense (ChatContainer)}/>
     <Route path='/VideoCalls' render = {LazySuspense (ChatContainer)}/>
      
-     {/* <Redirect to="/profile"/> */}
+     
      
     </Switch>
     <Footer/>
@@ -60,11 +61,11 @@ let AppContainer =  compose (
   connect( mapStateToProps, {initialize}))(App);
 
 const BridesApp = (props) => {
-  return <BrowserRouter>
+  return <HashRouter>
    <Provider store={store}>
    <AppContainer />
    </Provider>
-   </BrowserRouter>
+   </HashRouter>
   }
 
   export default BridesApp
