@@ -1,6 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, ChangeEvent} from 'react'
 
-const StatusHook = (props) => {
+
+type Props = {
+  status: string;
+  updateStatus: (status: string) => void
+};
+
+const StatusHook:React.FC<Props> = (props) => {
 
     let [editMode, setEditMode] = useState(false)
     let [status, setStatus] = useState(props.status)
@@ -16,7 +22,7 @@ const StatusHook = (props) => {
       setEditMode(false)
       props.updateStatus(status)
     }
-    const onStatusChange = (e) => {
+    const onStatusChange = (e: ChangeEvent<HTMLInputElement>) => {
       setStatus(e.currentTarget.value)
     }
   return (
@@ -24,7 +30,7 @@ const StatusHook = (props) => {
   <div className="Profile_status">
     {!editMode &&
    <div> 
-     <span onDoubleClick={activateEditMode}>{this.props.status || "Clickme"}</span></div>
+     <span onDoubleClick={activateEditMode}>{props.status || "Clickme"}</span></div>
   }
   {editMode &&
   <div><input onChange={onStatusChange} autoFocus={true} onBlur={deActivateEditMode} value={status} /></div>

@@ -1,20 +1,22 @@
-import { AppStateType, ActionTypes,  BaseThunk } from './redux-store';
+import { AppStateType, ActionTypes, BaseThunk } from "./redux-store";
 /* import { setCurrentPage } from './Users_Reducer'; */
-import { PhotosType, UsersType } from './../types/types';
+import { PhotosType, UsersType } from "./../types/types";
 import { usersAPI } from "../api/usersAPI";
 import { updateObjArr } from "../components/Users/object-helpers";
-import { ThunkAction } from 'redux-thunk';
-import { Dispatch } from 'redux';
-
+import { ThunkAction } from "redux-thunk";
+import { Dispatch } from "redux";
 
 const initialState = {
-users: [] as Array<UsersType>,
- totalUsersCount: 0,
- PageSize: 8,
- currentPage: 1,
- isLoading: true,
-toggleFollowing: [] as Array<number> // array of  users id 
- 
+  users: [] as Array<UsersType>,
+  totalUsersCount: 0,
+  PageSize: 8,
+  currentPage: 1,
+  isLoading: true,
+  toggleFollowing: [] as Array<number>, // array of  users id
+  filter: {
+    term: '',
+    friend: null as null | boolean
+  }
 }
 
 
@@ -62,6 +64,9 @@ const UsersReducer = (state = initialState, action: action) => {
         isLoading: action.Loading,
       };
     }
+    case "Set_FILTER": {
+      return {...state, filter: action.payload }
+      }
     case "Toggle_is_Following": {
       return {
         ...state, //@ts-ignore
@@ -74,53 +79,77 @@ const UsersReducer = (state = initialState, action: action) => {
     default:
       return state;
   }
-}
+};
 
-type action =  ActionTypes<typeof actions>
+export type Filter = typeof initialState.filter;
+export type InitialState = typeof initialState
+type action = ActionTypes<typeof actions>;
+type Thunk = BaseThunk<action>;
+
 
 const actions = {
- follow:  (userId: number) => ({type: "Follow", userId}  as const),
- unfollow:  (userId: number) => ({type: "Unfollow",userId} as const),
- setUsers:  (users: Array<UsersType>) => ({type: "Set_user",users} as const),
- setCurrentPage:  (currentPage: number) => ({type: "Set_current_page",currentPage} as const),
- setTotalUsers:  (totalCount: number) => ({type: "Set_total_users",totalCount} as const),
- thisLoading:  (Loading: boolean) => ({ type: "Is_Loading", Loading } as const),
- toggleIsFollowing:  (following: boolean, userId: number) => ({ type: "Toggle_is_Following", following, userId } as const)
+  follow: (userId: number) => ({ type: "Follow", userId } as const),
+  unfollow: (userId: number) => ({ type: "Unfollow", userId } as const),
+  setUsers: (users: Array<UsersType>) => ({ type: "Set_user", users } as const),
+  setCurrentPage: (currentPage: number) =>
+    ({ type: "Set_current_page", currentPage } as const),
+  setTotalUsers: (totalCount: number) =>
+    ({ type: "Set_total_users", totalCount } as const),
+  thisLoading: (Loading: boolean) => ({ type: "Is_Loading", Loading } as const),
+  toggleIsFollowing: (following: boolean, userId: number) =>
+    ({ type: "Toggle_is_Following", following, userId } as const),
+  setFilter: (filter: Filter) => ({ type: "Set_FILTER", payload: filter } as const)
 }
 
 
 
-type Thunk = BaseThunk<action>
-
-export const getUsers = (currentPage: number, PageSize: number): Thunk => {
-  return async (dispatch: Dispatch<action>) => {
+export const getUsers = (currentPage: number,PageSize: number,filter: Filter): Thunk => {
+  return async (dispatch: Dispatch<action>, getState) => {
+    
     dispatch(actions.thisLoading(true));
-    let data = await usersAPI.getUsers(currentPage, PageSize);
+    dispatch(actions.setCurrentPage(currentPage));
+    dispatch(actions.setFilter(filter));
+    
+    let data = await usersAPI.getUsers(currentPage, PageSize, filter.term, filter.friend);
     dispatch(actions.thisLoading(false));
     dispatch(actions.setUsers(data.items));
     dispatch(actions.setTotalUsers(data.totalCount));
   };
-}
+};
 
-const _ForFollowUnfollow = async (dispatch: Dispatch<action>, userId:number, apiMethod:any, actionCreator:(userId: number) => action) => {
+const _ForFollowUnfollow = async (
+  dispatch: Dispatch<action>,
+  userId: number,
+  apiMethod: any,
+  actionCreator: (userId: number) => action
+) => {
   dispatch(actions.toggleIsFollowing(true, userId));
-  let response = await apiMethod(userId)
+  let response = await apiMethod(userId);
   if (response.data.resultCode === 0) {
-    dispatch(actionCreator(userId))
+    dispatch(actionCreator(userId));
   }
   dispatch(actions.toggleIsFollowing(false, userId));
-}
+};
 
-
-export const followThunk = (userId:number): Thunk => {
+export const followThunk = (userId: number): Thunk => {
   return async (dispatch) => {
-    _ForFollowUnfollow(dispatch, userId, usersAPI.follow.bind(usersAPI), actions.follow)
-  }
-}
+    _ForFollowUnfollow(
+      dispatch,
+      userId,
+      usersAPI.follow.bind(usersAPI),
+      actions.follow
+    );
+  };
+};
 
-export const unfollowThunk = (userId:number): Thunk => {
+export const unfollowThunk = (userId: number): Thunk => {
   return async (dispatch) => {
-    _ForFollowUnfollow(dispatch, userId, usersAPI.unfollow.bind(usersAPI), actions.unfollow)
-  }
-}
-export default UsersReducer
+    _ForFollowUnfollow(
+      dispatch,
+      userId,
+      usersAPI.unfollow.bind(usersAPI),
+      actions.unfollow
+    );
+  };
+};
+export default UsersReducer;

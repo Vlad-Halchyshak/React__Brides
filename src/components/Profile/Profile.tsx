@@ -1,49 +1,64 @@
-import React,{useState } from 'react'
+/* eslint-disable jsx-a11y/alt-text */
+import React,{ChangeEvent, useState } from 'react'
 import vito from '../../images/vito.jpg'
 import CoolSlider from '../Slider/slider'
 import Loading from '../Loading/loading'
 import ProfileStatus from './Status'
 import ProfileDataForm from './profileForm'
 import chatprofile from '../../assets/chat-profile.jpg'
+import { ProfileType } from '../../types/types'
 
-const Profile = (props) => {
+
+type Props = {
+    profile: ProfileType
+    status: string
+    updateStatus: (status: string) => void
+    isOwner: boolean
+    savePhoto: (file: File) => void
+    saveProfile: (profile: ProfileType) => Promise<any>
+}
+
+const Profile: React.FC<Props> = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
 
 
     let [editMode, setEditMode] = useState(false)
-    if (!props.profile) {
+    if (!profile) {
+        //@ts-ignore
         return <Loading style={{ padding: "150px" }} />
     }
 
-    const onSubmit = (formData) => {
-        props.saveProfile(formData)
+    const onSubmit = (formData: ProfileType) => {
+        saveProfile(formData)
             .then(() => {
                 setEditMode(false)
             }
             )
     }
-    const mainPhotoSelected = (e) => {
-        if (e.target.files.length) {
-            props.savePhoto(e.target.files[0])
+    const mainPhotoSelected = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files?.length) {
+            savePhoto(e.target.files[0])
         }
     }
-    return <content className="content">
+    
+    return <div className="content">
 
         <div className="choose_photo">
-            {props.isOwner &&
+            {isOwner &&
                 <input type="file" id="upload" onChange={mainPhotoSelected} />}
-            <label for="upload" className="Label_yeah">Upload</label>
+            
+            <label htmlFor="upload" className="Label_yeah">Upload</label>
         </div>
 
 
         <div className="content__section">
-            <img src={props.profile.photos.large || chatprofile} />
+            <img src={profile.photos.large || chatprofile} />
             <div className="name-profile">
                 <div>
                     <h3>Vito Corleone</h3>
                     <p>63 years old, Sicily, Italy
                 </p>
                 </div>
-                {<p><ProfileStatus status={props.status} updateStatus={props.updateStatus} /></p>}
+                {<p><ProfileStatus status={status} updateStatus={updateStatus} /></p>}
 
 
                 <div className="parameters">
@@ -52,39 +67,39 @@ const Profile = (props) => {
                             <tbody>
                                 <tr>
                                     <td>Birth Date</td>
-                                    <td class="value">07.12.1891</td>
+                                    <td className="value">07.12.1891</td>
                                 </tr>
                                 <tr>
                                     <td>Height</td>
-                                    <td class="value">183 cm</td>
+                                    <td className="value">183 cm</td>
                                 </tr>
                                 <tr>
                                     <td>Weight</td>
-                                    <td class="value">82 kg</td>
+                                    <td className="value">82 kg</td>
                                 </tr>
                                 <tr>
                                     <td>Eyes</td>
-                                    <td class="value">Brown</td>
+                                    <td className="value">Brown</td>
                                 </tr>
                                 <tr>
                                     <td>Hair</td>
-                                    <td class="value">Dark brown</td>
+                                    <td className="value">Dark brown</td>
                                 </tr>
                                 <tr>
                                     <td>Build</td>
-                                    <td class="value">Massive</td>
+                                    <td className="value">Massive</td>
                                 </tr>
                                 <tr>
                                     <td>Glasses</td>
-                                    <td class="value">No</td>
+                                    <td className="value">No</td>
                                 </tr>
                                 <tr>
                                     <td>Smoking</td>
-                                    <td class="value">Yes</td>
+                                    <td className="value">Yes</td>
                                 </tr>
                                 <tr>
                                     <td>Drinking</td>
-                                    <td class="value">Yes</td>
+                                    <td className="value">Yes</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -131,8 +146,9 @@ const Profile = (props) => {
                     </table>
                 </div>
                 {editMode
-                    ? <ProfileDataForm initialValues={props.profile} profile={props.profile} onSubmit={onSubmit} />
-                    : <ProfileData goEditMode={() => { setEditMode(true) }} profile={props.profile} isOwner={props.isOwner} />}
+                    //@ts-ignore
+                    ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} />
+                    : <ProfileData goEditMode={() => { setEditMode(true) }} profile={profile} isOwner={isOwner} />}
 
             </div>
         </div>
@@ -142,14 +158,21 @@ const Profile = (props) => {
             <a href="#" className="btn_letter">Send letter</a>
         </div>
         <CoolSlider />
-    </content>
+        
+    </div>
+    
+    
 }
 
 
 
+type ProfileData = {
+    profile: ProfileType
+    isOwner: boolean
+    goEditMode: () => void
+}
 
-
-const ProfileData = ({ profile, isOwner, goEditMode }) => {
+const ProfileData: React.FC<ProfileData> = ({ profile, isOwner, goEditMode }) => {
     return <div className="Info_details"> <div>Full name: {profile.fullName}</div>
         <div>About me: {profile.aboutMe}</div>
         <div>Looking for a Job: {profile.lookingForAJob ? "yes" : "no"}</div>

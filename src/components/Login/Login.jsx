@@ -2,18 +2,18 @@ import React from 'react'
 import { reduxForm, Field } from 'redux-form'
 import { required } from '../../FormValidator/validator'
 import { Input } from '../../FormValidator/formControl'
-import {loginpage} from './loginpage.scss'
+import { loginpage } from './loginpage.scss'
 import girl from '../../assets/girl.jpg'
 import { login } from '../../redux/Auth_Reducer'
-import { connect } from 'react-redux'
+import { connect, useDispatch, useSelector } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
 
 
 
 
-const LoginForm = ( {handleSubmit,error, captcha, }) => {
-  
+const LoginForm = ({ handleSubmit, error, captcha, }) => {
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="Login_field"><Field placeholder={"Email"} component={Input} name={"email"} validate={[required]} /></div>
@@ -31,22 +31,26 @@ const LoginForm = ( {handleSubmit,error, captcha, }) => {
 }
 const LoginRxForm = reduxForm({ form: "login" })(LoginForm)
 
-const LoginPage = (props) => {
+export const LoginPage = () => {
+
+  const captcha = useSelector(state => state.auth.captcha)
+  const isAuth = useSelector(state => state.auth.isAuth)
+
+  const dispatch = useDispatch()
   const onSubmit = (formData) => {
-    props.login(formData.email, formData.password, formData.rememberMe, formData.captcha)
+    dispatch(login(formData.email, formData.password, formData.rememberMe, formData.captcha))
   }
 
-  if (props.isAuth) {
+  if (isAuth) {
     return <Redirect to={"/profile"} />
   }
-  
   return (
     <div className="login_container">
       <div className="login_box">
         <div><h1>Login</h1>
           <p>Please enter your information below</p>
           <div className="login_fields"></div>
-          <LoginRxForm onSubmit={onSubmit} captcha={props.captcha} />
+          <LoginRxForm onSubmit={onSubmit} captcha={captcha} />
         </div>
       </div>
       <div className="Welcome">
@@ -77,9 +81,3 @@ const LoginPageGirl = () => {
   )
 }
 
-let mapStateToProps = (state) => ({
-  isAuth: state.auth.isAuth,
-  captcha: state.auth.captcha
-})
-
-export default connect (mapStateToProps, {login})(LoginPage)

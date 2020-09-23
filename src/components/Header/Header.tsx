@@ -2,7 +2,14 @@ import React from 'react'
 import heart from '../../images/heart.png'
 import { NavLink } from 'react-router-dom'
 
-const Header = (props) => {
+export type mapProps = {
+  isAuth: boolean
+}
+export type dispatch = {
+  logout: () => void
+}
+
+const Header: React.FC<mapProps & dispatch> = (props) => {
   return <header className="header">
     <NavLink to='/profile'>
     <div className="header__item_Dashboard">

@@ -3,9 +3,9 @@ import { instance, getItems, Response } from './api';
 import { AxiosPromise } from 'axios';
 
 export const usersAPI = {
-  getUsers(currentPage = 1, PageSize = 10) {
+  getUsers(currentPage = 1, PageSize = 10, term: string = '', friend: null | boolean = null) {
     return instance
-      .get<getItems>(`users?page=${currentPage}&count=${PageSize}`)
+      .get<getItems>(`users?page=${currentPage}&count=${PageSize}&term=${term}` + (friend === null ? '' : `&friend=${friend}`))
       .then((response) => {
         return response.data
       });

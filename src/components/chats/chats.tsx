@@ -1,14 +1,20 @@
 import React from 'react';
 import chat_girl from "../../images/chat_girl.jpg"
-import { chats } from './chats.scss'
+
 import { NavLink, Redirect } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 
 
+type props = {
+  id: number
+  name: string
+  age: number
+  city: string
+  message: string
+}
 
 
-
-const ChatItem = (props) => {
+const ChatItem: React.FC<props> = (props) => {
   return (
     <NavLink to={"/chats/" + props.id}>
       <li className="item-girl">
@@ -19,7 +25,7 @@ const ChatItem = (props) => {
   )
 }
 
-const ChatMessage = (props) => {
+const ChatMessage:React.FC<props> = (props) => {
   return (
     <div>
       <h1 className="title-dialog-item">
@@ -33,7 +39,7 @@ const ChatMessage = (props) => {
   )
 }
 
-const MyMessage = (props) => {
+const MyMessage: React.FC<props> = (props) => {
   return (
     <div>
       <h1 className="title-my-dialog">
@@ -52,19 +58,21 @@ const MyMessage = (props) => {
 
 
 
-const Chats = (props) => {
+const Chats = (props: any) => {
 
 
   let state = props.ChatsPage
-
+  //@ts-ignore
   let MyMessageElement = state.MyMessages.map(my => <MyMessage name={my.name} key={my.id} id={my.id} message={my.message} />)
+  //@ts-ignore
   let ChatMessageDataElement = state.ChatMessages.map(dialog => <ChatMessage name={dialog.name} key={dialog.id} id={dialog.id} message={dialog.message} />)
+  //@ts-ignore
   let ChatDataElements = state.ChatItems.map(chat => <ChatItem name={chat.name} key={chat.id} id={chat.id} age={chat.age} city={chat.city} />)
 
 
 
 
-  let OnSendMessage = (values) => {
+  let OnSendMessage = (values: any) => {
     props.SendMessage(values.MyTextMessage)
   }
 
@@ -91,7 +99,7 @@ const Chats = (props) => {
 
 
 
-const SendMessageForm = (props) => {
+const SendMessageForm = (props:any) => {
   return (
     <div>
 

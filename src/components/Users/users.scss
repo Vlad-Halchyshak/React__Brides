@@ -46,3 +46,12 @@ a.active {
   color: gray;
   font-family: Arial, Helvetica, sans-serif
 }
+.search_friends {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
+.form_options option {
+  padding: 10px;
+}

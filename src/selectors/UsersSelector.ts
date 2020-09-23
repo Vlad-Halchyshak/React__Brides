@@ -1,4 +1,4 @@
-import { AppStateType } from './../redux/redux-store';
+import { AppStateType } from '../redux/redux-store';
 /* import { AppStateType } from "../redux/redux-store"; */
 import { createSelector } from "reselect"
 
@@ -25,4 +25,7 @@ export const gainIsLoading = (state: AppStateType) => {
 };
 export const gainToggleFollowing = (state: AppStateType) => {
   return state.usersPage.toggleFollowing;
+};
+export const getUsersFilter = (state: AppStateType) => {
+  return state.usersPage.filter;
 };
