@@ -1,6 +1,6 @@
 import { UsersType } from './../types/types';
 import  axios from 'axios'
-
+/* нуы */
 
 export const instance = axios.create ({
   withCredentials: true,
