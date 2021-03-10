@@ -1,3 +1,4 @@
+  
 import React from 'react';
 import chat_girl from "../../images/chat_girl.jpg"
 
@@ -31,6 +32,5 @@ export default compose(
   WithRedirect,
   connect(mapStateToProps, mapDispatchToProps),
 )(Chats)
-
 
 

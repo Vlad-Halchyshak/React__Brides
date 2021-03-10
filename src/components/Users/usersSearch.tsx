@@ -42,7 +42,9 @@ export const UsersSearch: React.FC<props> = (props) => {
         {({ isSubmitting }) => (
           <Form>
             <div className="form_options">
-              <Field type="text" name="term" />
+              <div className="search_field">
+                <Field type="text" name="term" placeholder="whom u wanna find?" />
+                </div>
               <Field name="friend" as="select">
                 <option value="null">All</option>
                 <option value="true"> followed</option>

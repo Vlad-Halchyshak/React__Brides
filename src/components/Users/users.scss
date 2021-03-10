@@ -7,7 +7,6 @@
   grid-row-gap: 5rem;
   margin-top: 100px;
   grid-column-gap: 10px;
-
 }
 
 .users_photo img {
@@ -22,17 +21,16 @@
 .users_name h3 {
   display: flex;
   font-size: 16px;
-  color: #16B4DC;
+  color: #16b4dc;
   justify-content: space-between;
   //padding-left: 45px;
-
 }
 
 .users_name button {
   position: relative;
   font-size: 16px;
 
-  color: #FFFFFF;
+  color: #ffffff;
   bottom: 1px;
 
   border: 1px solid lightblue;
@@ -40,18 +38,17 @@
   background-color: #428511;
 }
 
-
 a.active {
   text-decoration: none;
   color: gray;
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
 }
 .search_friends {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  
 }
-.form_options option {
-  padding: 10px;
+.form_options {
+  display: flex;
+  gap: 3px;
 }
